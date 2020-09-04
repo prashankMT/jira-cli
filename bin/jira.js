@@ -36,7 +36,7 @@ var worklog = require('../lib/jira/worklog');
 
 var link = require('../lib/jira/link');
 
-var user = require('jira-cli/lib/jira/user');
+var user = require('../lib/jira/user');
 
 var watch = require('../lib/jira/watch');
 
