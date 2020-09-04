@@ -300,7 +300,7 @@ program
   .description('Change configuration')
   .option('-e, --endpoint <endpoint>', 'Jira url', String)
   .option('-p, --token <token>', 'Api token', String)
-  .option('-l, --login <email>', 'Email address for authentication', String)
+  .option('-m, --email <email>', 'Email address for authentication', String)
   .option('-c, --clear', 'Clear stored configuration')
   .option('-u, --url', 'Print url in config')
   .option('-t, --template <template>', 'Start config with this given template', String)
