@@ -36,6 +36,8 @@ var worklog = require('../lib/jira/worklog');
 
 var link = require('../lib/jira/link');
 
+var user = require('jira-cli/lib/jira/user');
+
 var watch = require('../lib/jira/watch');
 
 var add_to_sprint = require('../lib/jira/add_to_sprint');
@@ -125,10 +127,16 @@ program.command('assign <issue> [accountId]')
   });
 program.command('watch <issue> [user]').description('Watch an issue to <user>. Provide only issue# to watch to me').action(function (issue, user) {
   if (user) {
-    user = config.user_alias[user];
+    user = config.user_alias[user] || user;
     watch.to(issue, user);
   } else {
     watch.me(issue);
+  }
+});
+program.command('user <email>').description('Details of <user>.').action(function (email) {
+  if (email) {
+    email = email;
+    user.get(email);
   }
 });
 program.command('comment <issue> [text]').description('Comment an issue.').action(function (issue, text) {
